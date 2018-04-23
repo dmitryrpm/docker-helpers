@@ -1,12 +1,13 @@
 # docker-helpers
 Usefull docker helpers
 
-Remove all containers
+Stop and Remove all containers
 ```bash
+docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 ```
 
 Remove all containers with filter
 ```bash
-docker ps --all | grep '<some_name>' | awk '{print $1}' | xargs --no-run-if-empty docker rm
+docker ps -a | grep '<some_name>' | awk '{print $1}' | xargs --no-run-if-empty docker rm
 ```
