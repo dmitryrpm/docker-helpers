@@ -3,8 +3,12 @@ Usefull docker helpers
 
 Stop and Remove all containers
 ```bash
+// stop all containers
 docker stop $(docker ps -a -q)
+// delete all containers
 docker rm $(docker ps -a -q)
+// delete all volumes
+docker rmi $(docker images -a -q)
 ```
 
 Remove all containers with filter
