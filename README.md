@@ -14,4 +14,6 @@ docker rmi $(docker images -a -q)
 Remove all containers with filter
 ```bash
 docker ps -a | grep '<some_name>' | awk '{print $1}' | xargs --no-run-if-empty docker rm
+
+docker volume ls | grep '<some_name>' | awk '{print $2}' | xargs --no-run-if-empty docker volume rm
 ```
