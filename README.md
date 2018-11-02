@@ -1,5 +1,6 @@
-# docker-helpers
-Usefull docker helpers
+# helpers
+- Usefull docker helpers
+- Usefull bash-aliases helpers
 
 Stop and Remove all containers
 ```bash
