@@ -1,1 +1,17 @@
 
+Stop and Remove all containers
+
+# stop all docker containers
+alias dsa=docker stop $(docker ps -a -q)
+
+# delete all docker containers
+alias drm=docker rm $(docker ps -a -q)
+
+# delete all volumes
+alias drmi=docker rmi $(docker images -a -q)
+
+# remove all containers with filter
+
+alias drmif=docker ps -a | grep '<some_name>' | awk '{print $1}' | xargs --no-run-if-empty docker rm
+
+alais drv=docker volume ls | grep '<some_name>' | awk '{print $2}' | xargs --no-run-if-empty docker volume rm
